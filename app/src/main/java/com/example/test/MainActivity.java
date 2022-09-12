@@ -80,15 +80,12 @@ public class MainActivity extends AppCompatActivity {
         getDate();// 텍스트뷰에 정의해놓은 현재 날짜 뿌리기
         textView.setText(year + month + day);
 
-        textView.setOnClickListener(new View.OnClickListener() {
+        textView.setOnClickListener(new View.OnClickListener() { // 날짜 텍스트뷰 클릭 시 팝업형태의 캘린더 출력하여 날짜 선택
             @Override
             public void onClick(View v) {
                 new DatePickerDialog(MainActivity.this, myDatePicker, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
-
-
-
 
 
 
