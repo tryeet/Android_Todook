@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../Library/Android/sdk/platforms/android-32/data/res/layout/simple_list_item_multiple_choice.xml" value="0.2791791363830697" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.227" />
+        <entry key="app/src/main/res/drawable-v24/shape_outline.xml" value="0.287" />
+        <entry key="app/src/main/res/drawable-v24/textview_line.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/edge.xml" value="0.327" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2555" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.28" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.28" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_forward_24.xml" value="0.28" />
+        <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.327" />
+        <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.28" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.227" />
+        <entry key="app/src/main/res/drawable/textview_line.xml" value="0.169" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_test.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_web_viewer.xml" value="0.23428815733219324" />
+        <entry key="app/src/main/res/layout/announcement_view.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/custom_actionbar.xml" value="0.2726888982693119" />
+        <entry key="app/src/main/res/layout/input_list.xml" value="0.2791791363830697" />
+        <entry key="app/src/main/res/layout/listview.xml" value="0.24467099165894346" />
+        <entry key="app/src/main/res/layout/listview_item.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/mainview.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/settings.xml" value="0.5" />
+        <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/popup_menu.xml" value="0.14365113296280463" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
