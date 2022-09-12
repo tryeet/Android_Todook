@@ -11,14 +11,12 @@
         android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal">
-
         <Button
             android:id="@+id/btn_previous"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@drawable/ic_baseline_arrow_back_24"
             tools:ignore="SpeakableTextPresentCheck" />
-
         <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
@@ -29,17 +27,12 @@
             android:layout_marginRight="50dp"
             android:text="@string/_0000_00_00"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-
+            android:textSize="18sp"/>
         <Button
             android:id="@+id/btn_next"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@drawable/ic_baseline_arrow_forward_24"
             tools:ignore="SpeakableTextPresentCheck" />
-
     </LinearLayout>
-
-
 </LinearLayout>

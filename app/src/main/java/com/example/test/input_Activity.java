@@ -13,10 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.sql.Time;
 
-
 public class input_Activity extends AppCompatActivity {
-
-
 
     private EditText input_date, input_todo;
     private EditText timeSet;
@@ -40,7 +37,6 @@ public class input_Activity extends AppCompatActivity {
                 input_Activity.super.onBackPressed();
             }
         });
-
     }
     class visibleTimeSwitch implements CompoundButton.OnCheckedChangeListener { // 리스트 입력화면에서 알림 스위치 켰을 때 시간지정칸 보여줌
         @Override
