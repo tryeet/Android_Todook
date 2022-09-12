@@ -14,8 +14,8 @@
 
         <Button
             android:id="@+id/btn_previous"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:background="@drawable/ic_baseline_arrow_back_24"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -25,6 +25,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
             android:text="@string/_0000_00_00"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -32,8 +34,8 @@
 
         <Button
             android:id="@+id/btn_next"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:background="@drawable/ic_baseline_arrow_forward_24"
             tools:ignore="SpeakableTextPresentCheck" />
 

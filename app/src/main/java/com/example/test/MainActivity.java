@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -44,20 +46,30 @@ public class MainActivity extends AppCompatActivity {
     private View view;
     String year, month, day;
     TextView textView;
-    Button btn_previous, btn_next;
-
-    private CheckBox list_checkbox;
-    private TextView list_textview;
-
 
     // 메인화면 날짜 지정 관련 소스
     Calendar calendar = new GregorianCalendar();
 
-    public void dateSet() {
+    public void getDate() {
         year = calendar.get(Calendar.YEAR) + "년";
         month = (calendar.get(Calendar.MONTH)+1) + "월";
         day = calendar.get(Calendar.DAY_OF_MONTH) + "일";
+        TextView textView = (TextView)findViewById(R.id.date);
+        textView.setText(year + month + day);
     }
+    public void setDate(int year, int month, int dayOfMonth) {
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month);
+        calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+    }
+
+    DatePickerDialog.OnDateSetListener myDatePicker = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(android.widget.DatePicker view, int year, int month, int dayOfMonth) {
+            setDate(year, month, dayOfMonth);
+            getDate();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,32 +77,37 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         TextView textView = (TextView)findViewById(R.id.date);
 
-        dateSet();// 텍스트뷰에 정의해놓은 현재 날짜 뿌리기
+        getDate();// 텍스트뷰에 정의해놓은 현재 날짜 뿌리기
         textView.setText(year + month + day);
 
-        textView.setOnClickListener(new View.OnClickListener() { // 날짜 클릭했을때 실행되는 이벤트
+        textView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "날짜를 조회합니다.", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                new DatePickerDialog(MainActivity.this, myDatePicker, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+
+
+
+
+
+
         Button btn_previous = (Button)findViewById(R.id.btn_previous); // 이전 날짜 버튼
         Button btn_next = (Button)findViewById(R.id.btn_next); // 다음 날짜 버튼
 
-        btn_previous.setOnClickListener(new View.OnClickListener() {
+        btn_previous.setOnClickListener(new View.OnClickListener() { // 이전 버튼 리스너
             @Override
             public void onClick(View v) {
                 calendar.add(Calendar.DATE, -1); // 날짜 -1
-                dateSet();
+                getDate();
                 textView.setText(year + month + day);
             }
         });
-        btn_next.setOnClickListener(new View.OnClickListener() {
+        btn_next.setOnClickListener(new View.OnClickListener() { // 다음 버튼 리스너
             @Override
             public void onClick(View v) {
                 calendar.add(Calendar.DATE, 1); // 날짜 +1
-                dateSet();
+                getDate();
                 textView.setText(year + month + day);
             }
         });
