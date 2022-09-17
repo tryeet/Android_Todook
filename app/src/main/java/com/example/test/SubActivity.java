@@ -1,7 +1,9 @@
 package com.example.test;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -28,39 +30,54 @@ public class SubActivity extends AppCompatActivity {
         setting_developer = (TextView)findViewById(R.id.setting_developer);
         setting_qna = (TextView)findViewById(R.id.setting_qna);
 
+        //공지사항
         setting_announcement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(SubActivity.this, webViewer.class);
                 intent1.addFlags (Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent1);
-
             }
         });
-
-
+        //알림
         setting_notice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(Settings.ACTION_APPLICATION_SETTINGS);
+                startActivityForResult(intent, 0);
             }
         });
+        //버전
         setting_version.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar.make(v ,"현재 버전은 0.1 Alpha 입니다.", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                Intent intent = new Intent(getApplicationContext(), versionactivity.class);
+                startActivity(intent);
             }
         });
+        //개발자
         setting_developer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), DevActivity.class);
+                startActivity(intent);
             }
         });
+        //문의하기
+        TextView email = (TextView) findViewById(R.id.setting_qna);
         setting_qna.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent email = new Intent(Intent.ACTION_SEND);
+                email.setType("plain/text");
+                //이메일 보내는 대상
+                String[] address = {"email@address.com"};
+                email.putExtra(Intent.EXTRA_EMAIL, address);
+                //이메일 제목
+                email.putExtra(Intent.EXTRA_SUBJECT, "문의제목");
+                //이메일 내용
+                email.putExtra(Intent.EXTRA_TEXT, "문의내용들");
+                startActivity(email);
             }
         });
 
