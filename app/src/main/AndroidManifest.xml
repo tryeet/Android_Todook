@@ -32,6 +32,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SubActivity" />
+        <activity android:name=".versionactivity" />
+        <activity android:name=".DevActivity" />
     </application>
 
 </manifest>
